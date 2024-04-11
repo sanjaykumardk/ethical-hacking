@@ -1,0 +1,112 @@
+NOTE:
+
+$ -  Denotes the command
+# -  Denotes the comment line
+--------------------------------------------------------
+
+27 - Anonymity
+***
+
+1. Vulnerability, Exploit, Pentest, Ethical Hacker
+2. How to be Anonymous
+
+--------------------------------------------------------
+
+28 - How Network Works 
+***
+
+1. Public, Local IP - 192.168.(0 or 1).(1 to 255) and 10.02.2.15 for VM
+2. whatismyipaddress.com
+3. Local IP - $ ifconfig (for ip configurations). connected to internet by eth0 - inet is my ip
+4. In windows - use cmd and run $ ipconfig
+5. Request, Response
+
+--------------------------------------------------------
+
+29 - VPN & DNS
+***
+
+1. VPN - Virtual Private Network - Create Virtual Network so that others can connect to your Server. That is what we do in VPN we connect to VPN and change our IP as anonymous. (We request and they respond , there we connect to internet through the server or service. So change VPN to become anonymous.
+
+2. DNS - Domain Name Server - It connects us to Domain name ( by IP )
+Ex : If I go google.com it tells that go to 172.168blah blah and it directs us to the server which has been hosted.( In general you are using Internet providers DNS ). So we can also change our DNS to become anonymous.
+
+3. $ ping google.com - we send request to ping google ( 172.217.169.206 )
+
+----------------------------------------------------------
+
+30. Running VPN Books ( Running VPN as Anonymity Online )
+***
+
+1. Using VPN, If I $ ping google.com, My IP will be anonymous.
+2. COMMANDS:
+   $ sudo su
+   
+   # Search for 'free openvpn vpnbook' in google - ( A free VPN )
+   # Select vpnbook.com
+   
+   $ openvpn
+   
+   # Download Zip files from OpenVPN tab and Extract and $ cd into that directory
+   
+   $ ls
+   # Contain TCP and UDP based files
+   
+   $ openvpn [Any one of the files]
+   
+   # It asks for user and id that can be seen in openvpn tab of the website and it starts exhibiting the VPN service
+
+   $ ^C (control C - to stop VPN)
+   
+-------------------------------------------------------
+
+31. Changing DNS
+***
+
+1. # If error - Server down, Passwd wrong, IF sstl error go into that tcp or udp file and write in first line as $ tls-cipher "DEFAULT:@SECLEVEL=0" and save it.
+
+2. Google - 'free dns'
+3. GO lifewire.com and see primary and secondary domains
+4. COMMANDS:
+	$ sudo su
+	$ cat /etc/resolv.conf
+	# It uses my local name server
+	$ nano /etc/resolv.conf
+	# Now it is immutable
+	$ chattr +a /etc/resolv.con
+	$ lsattr /etc/resolv.conf
+	# lsattr makes file immutable
+	$ chattr -a /etc/resolv.con
+	# NOTE !!! add -i and +i to make mutable & immutable 
+	# add at last and comment other two dns
+	$ nameserver 8.8.8.8
+	$ nameserver 8.8.4.4
+
+	$ openvpn [Add file]
+
+	# Now it works fine
+
+	# if VPNBOOK doesnt work try other websites 
+
+---------------------------------------------------------
+
+32. Solutions for all problems ( VPN problem )
+***
+
+1. Try other websites like openvpn
+2. Change DNS
+3. If those doesnt work try this
+      	    |
+	    V
+4. Use Hotspot Shield software ( but it is paid )
+
+---------------------------------------------------------
+
+
+
+
+
+
+
+
+   
