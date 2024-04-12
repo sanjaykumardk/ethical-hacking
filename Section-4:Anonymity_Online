@@ -26,10 +26,12 @@ $ -  Denotes the command
 29 - VPN & DNS
 ***
 
-1. VPN - Virtual Private Network - Create Virtual Network so that others can connect to your Server. That is what we do in VPN we connect to VPN and change our IP as anonymous. (We request and they respond , there we connect to internet through the server or service. So change VPN to become anonymous.
+1. VPN - Virtual Private Network - Create Virtual Network so that others can connect to your Server. That is what we do in VPN we connect to VPN and change our IP as anonymous. 
+(We request and they respond , there we connect to internet through the server or service. So change VPN to become anonymous.
 
 2. DNS - Domain Name Server - It connects us to Domain name ( by IP )
-Ex : If I go google.com it tells that go to 172.168blah blah and it directs us to the server which has been hosted.( In general you are using Internet providers DNS ). So we can also change our DNS to become anonymous.
+Ex : If I go google.com it tells that go to 172.168blah blah and it directs us to the server which has been hosted.( In general you are using Internet providers DNS ). 
+So we can also change our DNS to become anonymous.
 
 3. $ ping google.com - we send request to ping google ( 172.217.169.206 )
 
