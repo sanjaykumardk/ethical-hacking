@@ -1,0 +1,198 @@
+
+		POST CONNECTION ATTACKS
+
+---------------------------------------------------------------------
+
+64. Netdiscover
+***
+
+1. Prerequisite : The VMs like Windows VM and Kali VM should be there
+and both should be in same network
+
+2. Both Must be connected to NAT ( Network Address Translation ) network ( That can be changed to NAT in VM settings of Virtual Box )
+
+3. KALI :
+
+   $ ifconfig ( inet - local ip {10.0.2.1},  but if we use wifi driver
+   -> { 192.168.0.22} somethin , netmask )
+
+   $ sudo apt install netdiscover
+   # It is actually a binary in bin directory
+
+   $ netdiscover -i eth0 -r 10.0.2.0/24 -c 10
+   
+   # -i is Interface name ( If I use wifi adapter use interface name as wlan0 )
+   # -r is Range (i.e) IP address of the Target IP
+   # Im gonna send a request like who has this IP
+   # 0/24 is CIDR ( Classless Inter Domain Routing ) notation which scans from 0 to 255
+   # 0/24 is nothing but it scans all the network in the range
+   # -c is count
+
+   # What netdiscover actually do is that sends all the IPs inside of the range asking for their MAC addresses or IP addresses
+   # It asks like hey who has this IP address and one of the Computer says that I have that IP and thus two devices connect each other . This is how ARP works.
+
+   # You can see some IPs and MAC [ 10.0.2.2 --> Kali and 10.0.2.6 --> Windows ]
+
+4. WINDOWS ( Command Prompt ):
+
+   $ ipconfig ( for ip configurations )
+   # You can see the same IP in the windows
+
+--------------------------------------------------------------------------------
+
+66. NMAP ( Network Mapper ) :
+
+1. It gives the information about the services , versions , operating systems.
+
+2. $ nmap 10.0.2.0/24
+   # Alternative for NetDiscover
+   # It scans upto 0 to 255
+   # We can see the open ports 
+
+------------------------------------------------------------------------
+
+67. ARP Protocol
+***
+
+`1. Ports are gates enable us to receive or send information when we are communicationg over the internet
+
+   Port #    -     Protocol
+
+   20/21            FTP
+   22               SSH
+   23               TELNET
+   53               DNS
+   67/68            DHCP
+   69               TFTP
+   80               HTTP
+   110              POP
+   123              NTP
+   137/138/139      NetBios
+   143              IMAP
+   161/162          SNGP
+   179              BGP
+   389              LDAP
+   443              HTTPS
+   636              LDAPS
+   989/990          FTP w SSL/TLS
+
+2. Ports number can go uptp 0 - 65535
+
+3. MITM - Man In the Middle
+
+4. When a Hacking device ( Kali ) and a PC is connected to a same router . The PC request google.com and the router sends the request to the DNS server and the response is sent to the Kali device
+
+5. For this we have to do ARP spoof ( Address Resolution Protocol )
+   *  ARP protocol used to discover link layer address or MAC address
+   *  It pairs it with IPV4 or IP address
+   
+
+------------------------------------------------------------------------
+
+
+68. Manual ARP Poisoning
+***
+
+1. $ netdiscover -i wlan0 10.0.2.0/24 -c 10
+   wlan0 -  my wifi card
+
+1. $ sudo apt install dsniff
+
+_____________________________________________
+3. $ arpspoof -i wlan0 -t 10.0.2.6 10.0.2.1
+   2.6 - is my victim machine
+   2.1 - is my router machine
+   
+   $ arpspoof -i wlan0 -t 10.0.2.1 10.0.2.6
+   # wlan0 -  my wifi card
+_____________________________________________
+
+2. To enable the ip forward
+   $ echo 1 > d
+
+   But by default it is at the state of 0
+
+   !!! Now hit enter to both command in 3. !!!
+
+4. In windows :  arp -a /proc/sys/net/ipv4/ip_forward
+
+-----------------------------------------------------
+
+69. Wireshark :
+***
+
+1. Do Same as Manual ARP poisoning
+
+2. See the progress in wireshark
+
+3. do $ echo 1 > /proc/sys/net/ipv4/ip_forward
+
+4. Also $ arp -a
+
+   _______________________
+5.   GO to unicornitems.com and just try to login with any name with Windows VM
+     _____________________
+
+6. Now In Kali , You can see the packets that has been transmitted is seen in Wireshark by stopping progress and that particular packet that contains INFORMATION
+
+----------------------------------------------------------
+
+70. Wireshark Analysis
+***
+
+1.
+
+---------------------------------------------------------
+
+71. BetterCap Installation
+***
+
+1. We can do ARP spoofing attacks and listen the packets
+
+2. GO google : MITM framework ( you can see the man in the middle framework repositories). It doesnot work anymore
+
+3. So we can go with BetterCap( A open source file ) and you can also see the GIthub repository of bettercap
+
+4. Swiss Army Knife and Man In the Middle Attack
+
+5. $ sudo apt install
+
+6. We can use any device like Our own eth0 or wifi adapter or NAT network device
+
+7. $ bettercap -iface eth0
+   # -iface -> Network Interface bind to, if empty the default interface is automatically selected
+
+8. Now bettercap has started
+
+9. It HERE USES CIDR notation FOR TUTOR AND THE STUDENT AS WELL
+
+10. Run $ help
+
+11. There you can see the SO MANY MODULES
+
+----------------------------------------------------
+
+72. ARP Attack
+***
+
+1. To see the specific module
+
+   $ help [module_name]
+   Ex : $ help net.probe
+
+2. $ net.probe on
+
+3. $ net.show
+
+4. $ help arp.spoof
+
+5. In that yopu can see arp.spoof.fullduplex
+   FULL DUPLEX - is a type of data communication
+   Data flows in 2 directions
+
+6. 
+
+---------------------------------------------------
+
+
+
