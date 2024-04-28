@@ -17,7 +17,7 @@
 	We can also install in other Operating Systems
 4. COMMANDS:
 	$ apt-get install tor -y
-	$ apt-get update
+	$ apt-get update # IF any error occured
 	# or google 'tor browser' select -> torproject.org
 	# Download for Linux and the file is in .zip format extract it
 	# It contains setup file
