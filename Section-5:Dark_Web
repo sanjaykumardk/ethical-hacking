@@ -22,4 +22,7 @@
 	# Download for Linux and the file is in .zip format extract it
 	# It contains setup file
 	$ cd { go to tor browser folder }
+	$ ./start-tor-browser.desktop
+	duckduckgo.com
+	Hiddenwiki
 	
