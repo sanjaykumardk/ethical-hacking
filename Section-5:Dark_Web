@@ -2,7 +2,7 @@
 35. Dark Web
 ***
 
-1. Visible Web -> Deep Web -> Dark Web ( Tor, Freenet )
+1. Visible Web -> Deep Web ( Like Admin Dashboard ) -> Dark Web ( Tor, Freenet )
 2. Layers of Dark Web
 3. Tor Browser, Tor Network
 
@@ -11,9 +11,10 @@
 36. Installing Tor on Kali
 ***
 
-1. There are other networks present in Dark Web
+1. There are other networks present in Dark Web like Onion Website , Onion Extensions
 2. So we need some other tools to access that network
 3. Also we need Tor System that maintains smooth running of Tor Browser
+	We can also install in other Operating Systems
 4. COMMANDS:
 	$ apt-get install tor -y
 	$ apt-get update
