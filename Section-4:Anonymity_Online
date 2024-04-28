@@ -71,7 +71,7 @@ So we can also change our DNS to become anonymous.
 ***
 
 1. # If error - Server down, Passwd wrong, IF sstl error go into that tcp or udp file and write in first line as $ tls-cipher "DEFAULT:@SECLEVEL=0" and save it.
-
+   And also if you are getting ssl error only you have to do this processes
 2. Google - 'free dns'
 3. GO lifewire.com and see primary and secondary domains
 4. COMMANDS:
