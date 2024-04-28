@@ -15,7 +15,9 @@ $ -  Denotes the command
 28 - How Network Works 
 ***
 
-1. Public, Local IP - 192.168.(0 or 1).(1 to 255) and 10.02.2.15 for VM
+1. Public , (Router allocates IP)Local IP - 192.168.(0 or 1).(1 to 255) and 10.02.2.15 for VM
+   A Router Generally gets 0.1 or 1.1
+   Here Public IP is for router is 85.100.25.149
 2. whatismyipaddress.com
 3. Local IP - $ ifconfig (for ip configurations). connected to internet by eth0 - inet is my ip
 4. In windows - use cmd and run $ ipconfig
