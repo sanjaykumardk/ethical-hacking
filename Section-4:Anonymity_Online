@@ -58,6 +58,8 @@ So we can also change our DNS to become anonymous.
    # Contain TCP and UDP based files
    
    $ openvpn [Any one of the files]
+	Password : emw79zs
+	Username : vpnbook
    
    # It asks for user and id that can be seen in openvpn tab of the website and it starts exhibiting the VPN service
 
