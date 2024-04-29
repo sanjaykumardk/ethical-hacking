@@ -106,6 +106,7 @@ _____________________________________________________________________
 
 58. WPA & WPA2
 ***
+NOTE : !!! HAndshake - If a device connect to router 4 packets are transmitted and it is 4 WAY HANDSHAKE
 
 1. Check whether the encryption is in WPA or WPA2 and it doesnt contain IVs
 
