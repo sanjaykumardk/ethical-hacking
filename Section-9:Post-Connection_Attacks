@@ -25,8 +25,9 @@ and both should be in same network
    # -r is Range (i.e) IP address of the Target IP
    # Im gonna send a request like who has this IP
    # 0/24 is CIDR ( Classless Inter Domain Routing ) notation which scans from 0 to 255
+   # It also can be KCIDR notation
    # 0/24 is nothing but it scans all the network in the range
-   # -c is count
+   # -c is count ( from 5 - 10 )
 
    # What netdiscover actually do is that sends all the IPs inside of the range asking for their MAC addresses or IP addresses
    # It asks like hey who has this IP address and one of the Computer says that I have that IP and thus two devices connect each other . This is how ARP works.
@@ -54,7 +55,7 @@ and both should be in same network
 67. ARP Protocol
 ***
 
-`1. Ports are gates enable us to receive or send information when we are communicationg over the internet
+`1. Ports are gates enable us to receive or send information when we are communicating over the internet
 
    Port #    -     Protocol
 
