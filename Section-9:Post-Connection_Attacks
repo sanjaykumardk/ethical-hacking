@@ -154,7 +154,7 @@ _____________________________________________
 
 3. So we can go with BetterCap( A open source file ) and you can also see the GIthub repository of bettercap
 
-4. Swiss Army Knife and Man In the Middle Attack
+4. Swiss Army Knife for Network Reconiassance and Man In the Middle Attack
 
 5. $ sudo apt install
 
@@ -191,9 +191,14 @@ _____________________________________________
    FULL DUPLEX - is a type of data communication
    Data flows in 2 directions
 
-6. 
+6. Here you can use arp.spoof to steal passwords
 
 ---------------------------------------------------
+
+73. Sniffing Passwords 
+***
+
+1. 
 
 
 
