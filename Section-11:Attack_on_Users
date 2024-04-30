@@ -1,3 +1,23 @@
 ATTACK ON USERS
 
 90. Attack on User
+***
+
+1. Social Engineering - Gathering infos about a target inorder to make that target to do something for us
+2. We can make them run some .exe file
+
+---------------------------------------------------------------------
+
+91. Installing veil
+***
+
+1. Use to create backdoor
+2. GO google : Veil Framework
+3. Find the github repo of that
+
+4. GO ROot and go opt
+   $ cd /
+   $ cd opt/
+   $ sudo apt-get -y install git
+   $ git clone https://github.com/Veil-Framework/Veil.git
+   $ Now all the folders has been cloned
