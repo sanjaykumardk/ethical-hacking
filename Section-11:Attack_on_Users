@@ -15,9 +15,33 @@ ATTACK ON USERS
 2. GO google : Veil Framework
 3. Find the github repo of that
 
-4. GO ROot and go opt
+4. GO Root and go opt
    $ cd /
    $ cd opt/
    $ sudo apt-get -y install git
    $ git clone https://github.com/Veil-Framework/Veil.git
    $ Now all the folders has been cloned
+   $ python3 Veil.py
+   NOW YOU CAN SEE THE DASHBOARD FOR VEIL
+
+--------------------------------------------------------------------
+
+92. Veil Overview
+***
+IN MAIN MENU :
+
+1. In dashboard : cmds avail are - exit , info , list , update , use
+2. $ list 
+   # Two are available : evasion and ordnance
+   # We are going to deal evasions to create backdoors
+3. $ use 1 # because 1 is evasion here
+   # Now we have got around 41 payloads avail , with that we can create backdoor
+4. $ list # now list evasion
+5. It lists payloads 
+6. Ex : ruby/shellcode_inject/flat.py
+         ruby/intrepreter/rev_https.py
+         1st is program type
+         2nd is Session type
+         3rd is Connection type -> Bind and reverse
+7. 
+
