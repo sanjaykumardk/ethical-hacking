@@ -6,4 +6,35 @@
 2. Manipulating the target to become as a victim for us 
 3. So we will be creating the JPEG or PNG or URL
 4. StormBreaker -  a github repo by ultrasecurity
+5. With this we are going to create the BackDoors
 
+6. TERMINAL :
+   $ sudo apt update
+   $ sudo su
+   $ cd /opt
+   $ git clone https://github.com/sanjaykumardk/Storm-Breaker.git
+   $ cd Storm-Breaker
+   $ ls
+
+   $ sudo bash install.sh
+   # Sometimes you can get error like Externally Managed Environment
+   $ python3 -m venv .venv
+   # If it still showa error then,
+   $ sudo apt install python3.11-venv
+   # This enables us the PIP module for the virtual environment
+   # To Activate This Environment : $ source .venv/bin/activate
+   # Now Run this one more time : $ sudo bash install.sh
+   # We might also get error but you can see that there some upgradations are being done
+   # Now error really doesnt matter
+
+   $ sudo python3 -m pip install -r requirements.txt
+   $ sudo python3 st.py
+
+   #  AND HERE YOU GO YOU CAN SEE THE DASHBOARD FOR STORM BREAKER
+
+-------------------------------------------------------------------------------------------
+
+102. Ngrok Settings
+***
+
+1. 
