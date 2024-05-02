@@ -1,0 +1,12 @@
+
+297. Using Libraries
+***
+
+1. Python is now used world wide because of its extensive number of packages and libraries
+2. Go Google for example : Python module for web
+3. You can see the details of the modules
+4. Inorder to use that module , that moule should be present in our PC
+
+5. Now in terminal we use pip( pip is a tool that allows us to handle the libraries and modules )
+6. $ pip install numpy
+   # For example If I want to install the numpy module 
