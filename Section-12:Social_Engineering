@@ -46,3 +46,46 @@ and without knowing others to know your public IP
 4. GO Google : ngrok.com
 
 5. 
+   To Extract : sudo tar -xvzf ~/Downloads/https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
+   To Auth Token : ./ngrok config add-authtoken 2ftdOqSmvSuE7Gwa5EZdkNsPaHG_2MTHdMEwehdpUDLxDsYyB
+
+-------------------------------------------------------------------------------------------
+
+103. Accessing Location, Camera, Microphone
+***
+
+1. 
+
+---------------------------------------------------------------------------------------
+
+104. Malware Types
+***
+
+1. Randsomware - BLACKMAILS YOU Like it encrypts your data by changing the extensions of files and if you give the correct
+password it retreives you the data back
+
+2. Spyware - Targets individual like gets datas for the credit card of the target and sends 
+the datas to the Hacker. Example : It comes wth the application when you download the mod version of
+that application
+
+3. Adware - Kind of sneaky malware Spams you with ads ( advertisments ) 
+
+4. Worms - Can actually spread themselves in the network over internet ( Like spreading corona Virus )
+   whereas virus is same as worms but it doesnot spread itself 
+
+5. Botnets - It just runs in the background like it will be hibernate for 5-6 months and after 
+a period of time it starts running
+
+6. Trojans - It looks like a malware but it is a backdoor like png, or pdf, jpeg
+
+---------------------------------------------------------------------------------------
+
+105. Maltego
+***
+
+1. 
+
+
+
+
+
