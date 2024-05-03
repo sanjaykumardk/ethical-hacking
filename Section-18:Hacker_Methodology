@@ -1,17 +1,18 @@
 162. Ethical Hacker Steps :
 ***
 
-1. Step 1: Reconiassance
+1. Step 1: Reconnaissance
    You gather information passively and then you will get lot of information
+   
 2. Step 2: Scanning
    You will gather Intense scanning, ARP scanning 
 3. Step 3: Identifying Vulnerabilities
    You can find the weakness inside the system and leverage that vulnerability
-4. Gain Access 
+4. Step 4 : Gain Access 
    You can exploit that vulnerabilty and try to gain access
-5. Maintain Access
+5. Step 5 : Maintain Access
    You have to maintai a sustainable connection
-6. Reporting 
+6. Step 6 : Reporting 
    Ypu can make a report of that finally
 
 --------------------------------------------------------------------
